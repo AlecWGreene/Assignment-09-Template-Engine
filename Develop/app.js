@@ -45,18 +45,35 @@ const defaultQuestions = [{
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
 
+function displayTeamInfo(){
+    if(teamInfo.length === 0){
+        
+    }
+}
+
 async function getTeamInfo(){
-    const t_running = true;
+    // Helper var to track loop
+    let t_running = true;
+
     // While the user wants to keep running
     while(t_running){
-        let t_info = {};
+        // Get team member info
+        teamInfo.push(await getTeamMemberInfo()); 
 
+        // Get continue confirmation
+        console.clear();
+        t_running = await inquirer.prompt({
+            type: "confirm",
+            name: "confirmation",
+            message: "Would you like to add more team members?"
+        });
     }
 }
 
 
 async function getTeamMemberInfo(){
-    let return_info;
+    let return_info = {};
+    console.clear();
 
     // Get the selected category
     let { role: t_category } = await inquirer.prompt({
@@ -68,7 +85,6 @@ async function getTeamMemberInfo(){
 
     // Ask default employee information
     let t_info = await inquirer.prompt(defaultQuestions);
-
     // Gather the custom property
     let t_customProp;
     switch(t_category){
@@ -84,28 +100,27 @@ async function getTeamMemberInfo(){
     }
 
     // Update custom property
-    let { t_customProt_customValue } = await inquirer.prompt({
+    let { property : t_customValue } = await inquirer.prompt({
         type: "input",
-        name: t_customProp,
+        name: "property",
         message: `What is the Employee's ${t_customProp}?`
     });
-    t_info[t_customProp]
+    t_info[t_customProp] = t_customValue;
 
     // Construct the object
     switch(t_category){
         case "Manager":
-            return_info = new Manager(t_info);
+            return_info = new Manager(t_info.name, t_info.id, t_info.email, t_info.officeNumber);
             break;
         case "Engineer":
-            return_info = new Engineer(t_info);
+            return_info = new Engineer(t_info.name, t_info.id, t_info.email, t_info.officeNumber);
             break;
         case "Intern":
-            return_info = new Intern(t_info);
+            return_info = new Intern(t_info.name, t_info.id, t_info.email, t_info.officeNumber);
             break;
     }
 
-    console.log(return_info);
     return return_info;
 }
 
-getTeamMemberInfo();
+getTeamInfo();
