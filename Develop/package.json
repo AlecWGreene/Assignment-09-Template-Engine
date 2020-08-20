@@ -12,7 +12,8 @@
     "test-employee": "jest --verbose test/Employee.test.js",
     "test-manager": "jest --verbose test/Manager.test.js",
     "test-intern": "jest --verbose test/Intern.test.js",
-    "test-engineer": "jest --verbose test/Engineer.test.js"
+    "test-engineer": "jest --verbose test/Engineer.test.js",
+    "debug": "node app.js" 
   },
   "repository": {
     "type": "git",

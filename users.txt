@@ -1,0 +1,9 @@
+Desare Farris Manager id: 43 email: desarefarris@gmail.com office: 298A
+Alec Greene Engineer id: 27 email: alecwgreene@gmail.com github: AlecWGreene
+Ron Pitts Engineer id: 25 email: ronpitts81@gmail.com github: ronpitts90
+Sebastian Arrazola Engineer id: 30 email: seabass@gmail.com github: SeaBa55
+Maria Jimena Engineer id: 31 email: maria.jimena@gmail.com github: mja279
+John Jones Intern id: 50 email: jjJones@icloud.com School: University of Arizona
+Jim Halpert Intern id: 90 email: BigTuna@dundermifflin.net school: Athlead
+Pam Halpert Intern id: 60 email: Pammy@dundermifflin.net school: Pratt
+Vincent Shury Intern id: 65 email: vinceshury@gmail.com school: Michigan State University 

@@ -17,6 +17,8 @@ const templatesDir = path.resolve(__dirname, "../templates");
  * @param {Array<Employee>} employees An array of employees on the team
  * 
  * @description Renders the passed employees using the loaded html templates
+ * 
+ * @returns {String} A block of html code representing a team information page
  */
 const render = employees => {
   // Create helper variable to store html code
